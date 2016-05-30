@@ -11,12 +11,8 @@ http api tester
             * 必填字段:ID/Domain/Path/AssertType/ExpectResult
             * 其他都是选填字段
 
-|`ID`|`Domain`|`Path`|`AssertType`|`ExpectResult`|`HttpMethod`|$param1|$param2|cookies|repeat|threadNum|timeout|
-|--|--|--|--|--|--|--|--|--|--|
-|`[必填]`场景|`[必填]`域名|`[必填]`路径|`[必填]`断言：contains/equals/script|`[必填]`期望值|`[必填]`Http请求方式:POST/GET(默认POST)|参数1|参数2|cookies:json格式|场景重复请求多少次|场景并发数|请求的超时时间(ms)|
-|场景一|appmock.dp|/mw/request_builder|contains|code:200|GET|p1|p2|cookies...|1|1|500|
-|场景二|appmock.dp|/mw/request_builder|contains|code:200|POST|p1|p2|cookies...|2|5|500|
-|场景三|appmock.dp|/mw/request_builder|contains|code:200|GET|p1|p2|cookies...|10|10|500|
+|`ID`|`Domain`|`Path`|`AssertType`|`ExpectResult`|`HttpMethod`|$param1|$param2|cookies|repeat|threadNum|timeout|skip|
+
 
 * 断言
     * contains: 返回结果包含`ExpectResult`指定字段即返回true
