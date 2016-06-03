@@ -34,6 +34,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.springframework.http.HttpMethod;
 
+import java.net.URLEncoder;
 import java.util.List;
 import java.util.concurrent.Callable;
 
@@ -174,7 +175,7 @@ public class HttpDoXClient implements Callable<TestResult> {
         }
         StringBuilder sb = new StringBuilder();
         for (ParamPair paramPair: paramList){
-            sb.append(String.format("%s=%s&",paramPair.getKey(), paramPair.getValue()));
+            sb.append(String.format("%s=%s&",paramPair.getKey(), URLEncoder.encode(paramPair.getValue())));
         }
         return sb.toString();
     }
